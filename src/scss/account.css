@@ -1,0 +1,42 @@
+.account {
+  margin-bottom: 100px;
+}
+.account__container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+}
+.account__title {
+  margin-bottom: 100px;
+}
+.account__start {
+  margin-top: 90px;
+  max-width: 373px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.account__start-text {
+  margin: 54px 0;
+}
+
+.orders {
+  margin-bottom: 100px;
+}
+.orders__container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+}
+.orders__title {
+  margin-bottom: 100px;
+}
+
+.account__avatar {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 30px;
+}/*# sourceMappingURL=account.css.map */

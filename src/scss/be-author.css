@@ -1,0 +1,22 @@
+.be-author {
+  margin: 100px 0;
+}
+.be-author__container {
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+}
+.be-author__title {
+  margin-bottom: 100px;
+}
+.be-author__advantages-title {
+  margin-bottom: 100px;
+}
+.be-author__advantages-cards {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 40px;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+  justify-content: center;
+}/*# sourceMappingURL=be-author.css.map */

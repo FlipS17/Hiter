@@ -1,0 +1,86 @@
+.parthner {
+	margin-bottom: 152px;
+	&__container {
+		max-width: 960px;
+		margin: 0 auto;
+		width: 100%;
+	}
+	&__start {
+		&-title {
+			margin-bottom: 32px;
+		}
+		&-text {
+			@include book-desc;
+			text-align: center;
+			margin-bottom: 40px;
+		}
+		&-cards {
+			margin: 0 auto;
+			max-width: 690px;
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			row-gap: 30px;
+			column-gap: 30px;
+
+			&-card {
+				@include parhner-small-card;
+			}
+		}
+	}
+}
+
+.why-us {
+	margin-bottom: 152px;
+	&__container {
+		max-width: 1170px;
+		margin: 0 auto;
+		width: 100%;
+	}
+	&__title {
+		margin-bottom: 62px;
+	}
+	&__cards {
+		display: flex;
+		flex-wrap: wrap;
+		row-gap: 40px;
+		column-gap: 40px;
+		justify-content: center;
+		&-card {
+			@include why-us-big-card;
+		}
+	}
+
+	&__small-card {
+		@include why-us-small-card;
+	}
+}
+
+.request {
+	margin-bottom: 100px;
+	&__container {
+		display: flex;
+		flex-direction: column;
+		max-width: 900px;
+		margin: 0 auto;
+		width: 100%;
+	}
+	&__form {
+		display: flex;
+		flex-direction: column;
+		& > textarea {
+			margin-bottom: 50px;
+		}
+	}
+	&__input {
+		@include reqiest-input;
+	}
+	&__agree {
+		margin-bottom: 27px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		max-width: 410px;
+	}
+}

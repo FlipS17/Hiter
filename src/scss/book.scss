@@ -1,0 +1,85 @@
+.books {
+	&__container {
+		max-width: 1400px;
+		width: 100%;
+		margin: 0 auto;
+		text-align: start;
+	}
+	&__button-back {
+		@include more-button;
+	}
+	&__inner {
+		margin-top: 30px;
+		display: flex;
+		justify-content: space-between;
+		&-div {
+			max-width: 550px;
+			width: 100%;
+			&-img {
+				object-fit: cover;
+				object-position: center;
+				max-width: 400px;
+				width: 100%;
+			}
+		}
+		@media (max-width: 1152px) {
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 40px;
+		}
+		&-info {
+			text-align: start;
+			max-width: 613px;
+			width: 100%;
+			&-title {
+				margin-bottom: 20px;
+			}
+			&-button {
+				@include buy-button;
+			}
+			&-about {
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: 44px;
+				&-author {
+					@include book-author;
+				}
+				&-cost {
+					@include book-price;
+				}
+			}
+			&-description {
+				margin-bottom: 37px;
+				@include book-desc;
+			}
+		}
+		&-author {
+			align-items: center;
+			text-align: start;
+			display: flex;
+			justify-content: space-between;
+			max-width: 600px;
+			width: 100%;
+			margin-top: 32px;
+			&-img {
+				object-fit: cover;
+				object-position: center;
+				max-width: 170px;
+				max-height: 170px;
+				width: 100%;
+				border-radius: 50%;
+				margin-right: 10px;
+			}
+			&-info {
+				&-name {
+					@include author-text;
+					margin-bottom: 20px;
+				}
+				&-link {
+					@include author-link;
+				}
+			}
+		}
+	}
+}

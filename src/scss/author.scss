@@ -1,0 +1,103 @@
+.author {
+	margin: 100px 0;
+	&__container {
+		max-width: 1170px;
+		width: 100%;
+		margin: 0 auto;
+	}
+	&__bio {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		&-img {
+			max-width: 245px;
+			max-height: 245px;
+			border-radius: 50%;
+			width: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+		@media (max-width: 768px) {
+			flex-direction: column;
+			gap: 30px;
+		}
+		&-text {
+			max-width: 605px;
+			&-name {
+				margin-bottom: 25px;
+				@include author-name;
+				font-size: 40px;
+				font-family: 'Russo One';
+			}
+			&-about {
+				@include bio-text;
+			}
+		}
+	}
+}
+
+.achieve {
+	margin-bottom: 100px;
+	&__container {
+	}
+	&__cards {
+		display: flex;
+		flex-wrap: wrap;
+		row-gap: 40px;
+		column-gap: 40px;
+		@media (max-width: 768px) {
+			justify-content: center;
+		}
+		&-card {
+			@include achieve-card;
+			@include book-text;
+			&-number {
+				@include achieve-number;
+				margin-bottom: 38px;
+			}
+		}
+	}
+}
+
+.about__author {
+	margin-bottom: 100px;
+	&-img {
+		width: 100%;
+		max-width: 406px;
+		max-height: 407px;
+		object-fit: cover;
+		object-position: center;
+		@media (max-width: 768px) {
+			max-width: 320px;
+		}
+	}
+	&-container {
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: 768px) {
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			gap: 30px;
+		}
+	}
+	&-biography {
+		max-width: 720px;
+		&-title {
+			text-align: start;
+			margin-bottom: 29px;
+		}
+		& > p {
+			margin-bottom: 29px;
+			font-size: 18px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+.author-book-img {
+	max-width: 248px;
+	max-height: 391px;
+	width: 100%;
+}

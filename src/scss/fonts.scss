@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Russo+One&display=swap');
+
+@mixin text($font-family, $font-weight, $font-size) {
+	font-family: $font-family;
+	font-weight: $font-weight;
+	font-size: $font-size;
+}
+@mixin nav-text {
+	@include text('Play', 400, 16px);
+	color: $font-color;
+}
+
+@mixin h1 {
+	@include text('Russo One', 700, 48px);
+	color: $font-color;
+	@media (max-width: 750px) {
+		@include text('Russo One', 700, 40px);
+	}
+}
+
+@mixin h2 {
+	@include text('Russo One', 700, 32px);
+	color: $font-color;
+	text-align: center;
+}
+
+@mixin value-title {
+	@include text('Play', 400, 25px);
+	color: $font-color;
+}
+
+@mixin genre-text {
+	@include text('Play', 400, 18px);
+	color: $font-color;
+}
+
+@mixin book-text {
+	@include text('Play', 400, 16px);
+	color: $font-color;
+}
+
+@mixin book-cost {
+	@include text('Play', 400, 18px);
+	color: $main-color;
+}
+
+@mixin book-desc {
+	@include text('Play', 400, 24px);
+}
+
+@mixin book-author {
+	@include text('Play', 700, 24px);
+}
+
+@mixin book-price {
+	@include text('Play', 400, 32px);
+	color: $main-color;
+}
+
+@mixin button-text {
+	@include text('Play', 400, 15px);
+}
+
+@mixin author-text {
+	@include text('Play', 700, 40px);
+}
+
+@mixin author-link {
+	@include text('Play', 700, 20px);
+	color: $main-color;
+}
+
+@mixin more-button {
+	@include text('Play', 400, 16px);
+	color: $main-color;
+}
+
+@mixin sales-text {
+	@include text('Play', 400, 24px);
+	color: $font-color;
+	@media (max-width: 768px) {
+		@include text('Play', 400, 15px);
+	}
+}
+
+@mixin promo-text {
+	@include text('Play', 400, 32px);
+	color: $font-color;
+	@media (max-width: 768px) {
+		@include text('Play', 400, 20px);
+	}
+}
+
+@mixin author-name {
+	@include text('Russo One', 400, 48px);
+	color: $font-color;
+}
+
+@mixin bio-text {
+	@include text('Play', 400, 20px);
+	color: $font-color;
+}
+
+@mixin achieve-number {
+	@include text('Russo One', 400, 54px);
+	color: $main-color;
+}
+
+@mixin thin-title {
+	@include text('Play', 400, 32px);
+	color: $font-color;
+}
+
+@mixin year-number {
+	@include text('Play', 400, 120px);
+	color: $white-color;
+}
+
+@mixin author-name {
+	@include text('Play', 400, 20px);
+	color: $font-color;
+}
+
+@mixin parther-small-card-text {
+	@include text('Play', 700, 15px);
+	color: $font-color;
+}
+
+@mixin why-us-title-card {
+	@include text('Play', 700, 20px);
+	color: $font-color;
+}

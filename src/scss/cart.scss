@@ -1,0 +1,130 @@
+.cart {
+	&-warning {
+		text-align: center;
+	}
+	&__container {
+		max-width: 1400px;
+		width: 100%;
+		margin: 0 auto;
+		text-align: center;
+	}
+	&__title {
+		margin-bottom: 50px;
+	}
+
+	&__inner {
+		display: flex;
+		max-width: 1400px;
+		width: 100%;
+		margin: 0 auto;
+		justify-content: space-between;
+		@media (max-width: 768px) {
+			flex-direction: column;
+		}
+		&-product {
+			max-width: 887px;
+			max-height: 286px;
+			width: 100%;
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			@media (max-width: 425px) {
+				flex-direction: column;
+			}
+			& > img {
+				max-width: 182px;
+				max-height: 286px;
+				width: 100%;
+			}
+			&-info {
+				margin-top: 32px;
+				max-width: 250px;
+				&-text {
+					font-size: 20px;
+					margin-bottom: 10px;
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+			&-move {
+				margin-top: 32px;
+				&-count {
+					display: flex;
+					border: 1px solid $main-color;
+					border-radius: 20px;
+					max-width: 110px;
+					width: 100%;
+					&-more {
+						background: transparent;
+						border: none;
+						padding: 5px 15px;
+					}
+					&-number {
+						padding: 6px 13px;
+						border-left: 1px solid $main-color;
+						border-right: 1px solid $main-color;
+					}
+					&-less {
+						background: transparent;
+						border: none;
+						padding: 5px 15px;
+					}
+				}
+				&-delete {
+					position: absolute;
+					bottom: 13px;
+					display: flex;
+					justify-content: space-between;
+					max-width: 130px;
+					width: 100%;
+					text-align: center;
+					align-items: center;
+					@media (max-width: 425px) {
+						bottom: -300px;
+					}
+					&-text {
+						font-size: 20px;
+					}
+				}
+			}
+		}
+		&-aside {
+			@media (max-width: 425px) {
+				margin-top: 350px;
+			}
+			&-part {
+				margin-bottom: 20px;
+				padding: 27px 28px;
+				border: 1px solid $font-color;
+				border-radius: 20px;
+				max-width: 411px;
+				width: 100%;
+				text-align: center;
+				&:last-child {
+					margin-bottom: 0;
+				}
+				&-cost {
+					display: flex;
+					justify-content: space-between;
+					margin-bottom: 17px;
+				}
+				&-sale {
+					display: flex;
+					justify-content: space-between;
+					margin-bottom: 17px;
+				}
+				&-total {
+					display: flex;
+					justify-content: space-between;
+					margin-bottom: 17px;
+				}
+				&-delivery {
+					display: flex;
+					justify-content: space-between;
+					margin-bottom: 17px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,60 @@
+.all-authors-top {
+	&__container {
+		max-width: 1170px;
+		margin: 0 auto;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: 1024px) {
+			flex-direction: column;
+			gap: 20px;
+			align-items: center;
+		}
+	}
+	&-button {
+		@media (max-width: 1024px) {
+			max-width: 250px;
+		}
+	}
+	&__input {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		max-width: 680px;
+		width: 100%;
+		& > input {
+			max-width: 650px;
+			width: 100%;
+			border-radius: 20px;
+			padding: 7px 17px;
+		}
+	}
+}
+
+.all-authors {
+	margin-top: 100px;
+	&__container {
+		max-width: 1440px;
+		margin: 0 auto;
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		row-gap: 40px;
+		column-gap: 40px;
+		justify-content: center;
+	}
+	&__author {
+		text-align: center;
+		align-items: center;
+		&-img {
+			margin-bottom: 15px;
+			max-width: 245px;
+			max-height: 245px;
+			width: 100%;
+			border-radius: 50%;
+		}
+		&-name {
+			@include author-name;
+		}
+	}
+}
