@@ -1,0 +1,90 @@
+Received input: Array
+(
+    [cart] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 7
+                    [amount] => 1
+                    [total_price] => 22
+                )
+
+        )
+
+)
+
+Received input: Array
+(
+    [cart] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 7
+                    [amount] => 4
+                    [total_price] => 88
+                )
+
+        )
+
+)
+
+Received input: Array
+(
+    [cart] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 3
+                    [amount] => 1
+                    [total_price] => 990
+                )
+
+        )
+
+)
+
+Received input: Array
+(
+    [cart] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 3
+                    [amount] => 3
+                    [total_price] => 2970
+                )
+
+        )
+
+)
+
+Received input: Array
+(
+    [cart] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 3
+                    [amount] => 1
+                    [total_price] => 990
+                )
+
+        )
+
+)
+
+Received input: Array
+(
+    [cart] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 3
+                    [amount] => 3
+                    [total_price] => 2970
+                )
+
+        )
+
+)
+

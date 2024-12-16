@@ -237,54 +237,51 @@ if (!$db) {
 
 
 				} elseif (isset($_POST['request6'])) {
-					$query6 = "SELECT book.id_book, book.name AS BookName
-					FROM book
-					JOIN exemplyar ON book.id_book = exemplyar.id_book
-					WHERE exemplyar.amount < 10";
-
+					$query6 = "SELECT book.id_book, book.id_author, exemplyar.amount
+								FROM book
+								JOIN exemplyar ON book.id_book = exemplyar.id_book
+								WHERE exemplyar.amount < 11";
+				
 					// Execute the query
 					$result6 = mysqli_query($db, $query6);
-
+				
 					// Check if the query was successful
 					if (!$result6) {
 						die("Query failed: " . mysqli_error($db));
 					}
-
+				
 					// Display the results
 					echo "<h2 class='admin_title views_rez'>Результат:</h2>";
 					echo "<ul class='rez-ul'>";
 					while ($row = mysqli_fetch_assoc($result6)) {
 						echo "<li class='popup__block-text'>";
-						echo "ID книги: " . $row['id_book'] . ", ID автора: " . $row['id_author'] . ", ID жанра: " . $row['id_genre'] . ", Дата публикации: " . $row['date_publish'] . ", Цена: " . $row['cost'] . ", Id переводчика: " . $row['id_translator'] . ", Название: " . $row['name'] . ", Обложка: " . $row['photo'] . ", Описание: " . $row['description'];
+						echo "ID книги: " . $row['id_book'] . ", ID автора: " . $row['id_author'] . ", Количество: " . $row['amount'];
 						echo "</li>";
 					}
 					echo "</ul>";
-
-
-				} elseif (isset($_POST['request7'])) {
-					$query7 = "SELECT id_book FROM book WHERE CAST(date_publish AS UNSIGNED) = 2024";
-
+				}
+				
+				elseif (isset($_POST['request7'])) {
+					$query7 = "SELECT id_book, name, date_publish FROM book WHERE YEAR(date_publish) = 2024";
+				
 					// Execute the query
 					$result7 = mysqli_query($db, $query7);
-
+				
 					// Check if the query was successful
 					if (!$result7) {
 						die("Query failed: " . mysqli_error($db));
 					}
-
+				
 					// Display the results
 					echo "<h2 class='admin_title views_rez'>Результат:</h2>";
 					echo "<ul class='rez-ul'>";
 					while ($row = mysqli_fetch_assoc($result7)) {
 						echo "<li class='popup__block-text'>";
-						echo "ID книги: " . $row['id_book'] . ", ID автора: " . $row['id_author'] . ", ID жанра: " . $row['id_genre'] . ", Дата публикации: " . $row['date_publish'] . ", Цена: " . $row['cost'] . ", Id переводчика: " . $row['id_translator'] . ", Название: " . $row['name'] . ", Обложка: " . $row['photo'] . ", Описание: " . $row['description'];
+						echo "ID книги: " . $row['id_book'] . ", Название: " . $row['name'] . ", Дата публикации: " . $row['date_publish'];
 						echo "</li>";
 					}
 					echo "</ul>";
-
-
-
-				} elseif (isset($_POST['request8'])) {
+				}elseif (isset($_POST['request8'])) {
 					
 					$query8 = "SELECT genreName FROM genre WHERE id_genre IN (SELECT id_genre FROM book)";
 
@@ -352,7 +349,7 @@ WHERE book.id_author IN (SELECT id_author FROM author WHERE id_country != 1)";
 					echo "<ul class='rez-ul'>";
 					while ($row = mysqli_fetch_assoc($result10)) {
 						echo "<li class='popup__block-text'>";
-						echo "ID книги: " . $row['id_book'] . ", ID автора: " . $row['id_author'] . ", ID жанра: " . $row['id_genre'] . ", Дата публикации: " . $row['date_publish'] . ", Цена: " . $row['cost'] . ", Id переводчика: " . $row['id_translator'] . ", Название: " . $row['name'] . ", Обложка: " . $row['photo'] . ", Описание: " . $row['description'] . ", Жанр: " . $row['genreName'] . "ID автора: " . $row['id_author'] . ", Имя фамилия: " . $row['name'] . ", Дата рождения: " . $row['dateb'] . ", Страна: " . $row['id_country'] . ", Маленькое фото: " . $row['smallPhoto'] . ", Главное фото: " . $row['mainPhoto'] . ", Дополнительное фото: " . $row['extraPhoto'] . ", Верхнее описание: " . $row['desktop'] . ", Нижнее описание: " . $row['deskbot'] . ", Дополнительное описание: " . $row['deskextra'];
+						echo "ID книги: " . $row['id_book'] . ", ID автора: " . $row['id_author'] . ", ID жанра: " . $row['id_genre'] . ", Дата публикации: " . $row['date_publish'] . ", Цена: " . $row['cost'] . ", Id переводчика: " . $row['id_translator'] . ", Название: " . $row['name'] . ", Обложка: " . $row['photo'] .  ", Жанр: " . $row['genreName'] . "ID автора: " . $row['id_author'] . ", Имя фамилия: " . $row['name'] . ", Дата рождения: " . $row['dateb'] . ", Страна: " . $row['id_country'] . ", Маленькое фото: " . $row['smallPhoto'] . ", Главное фото: " . $row['mainPhoto'] . ", Дополнительное фото: " . $row['extraPhoto'] . ", Верхнее описание: " . $row['desktop'] . ", Нижнее описание: " . $row['deskbot'] . ", Дополнительное описание: " . $row['deskextra'];
 						echo "</li>";
 					}
 					echo "</ul>";

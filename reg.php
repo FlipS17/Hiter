@@ -55,15 +55,25 @@ if (mysqli_num_rows ($UserMail) > 0){
 
 if ($password == $passconfirm && strlen ($password) > 6 ){ 
 
-    $sqlInsert = "INSERT INTO user SET login = '$login', email = '$email', password = '$password', name = '$name', surname = '$surname', otch = '$otch', role ='0'"; 
 
-    $result = mysqli_query($db, $sqlInsert);
+    //Генерируем токен
+    $email_verification_token = bin2hex(random_bytes(16));
+
+    //Добавление в бд
+    $stmt = $conn->prepare("INSERT INTO user (login, email, password, role,surname,name, otch, email_verification_token) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    if (!$stmt) {
+        error_log('Ошибка подготовки запроса: ' . $conn->error);
+        echo json_encode(['success' => false, 'message' => 'Ошибка подготовки запроса']);
+        exit();
+    }
+    
+
+    $stmt->bind_param("sssssiss", $surname, $name, $otch, $email, $password, $role, $email_verified, $email_verification_token);
     
     header ('Location:http://localhost:5173/src/pages/account.php ');
 
     
    
-    
 }
 else{
     echo "Пароль меньше 6 символов или не совпадают.";

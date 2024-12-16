@@ -424,24 +424,24 @@ $translatorView_result = mysqli_query($db, $translatorView);
   <footer class="footer">
 			<div class="footer__container">
 				<div class="footer__nav">
-					<a href="/index.html"><img src="./src/img/mainpage/logo.svg" /></a>
+					<a href="/index.php"><img src="./src/img/mainpage/logo.svg" /></a>
 					<ul class="footer__nav-list">
-						<a href="/src/pages/catalog.html" class="footer__nav-list-link">
+						<a href="/src/pages/catalog.php" class="footer__nav-list-link">
 							<li class="footer__nav-list-item">Книги</li>
 						</a>
 
-						<a href="/src/pages/all-authors.html" class="footer__nav-list-link">
+						<a href="/src/pages/all-authors.php" class="footer__nav-list-link">
 							<li class="footer__nav-list-item">Авторы</li>
 						</a>
 
-						<a href="/src/pages/sales.html" class="footer__nav-list-link">
+						<a href="/src/pages/sales.php" class="footer__nav-list-link">
 							<li class="footer__nav-list-item">Акции</li>
 						</a>
 
-						<a href="/src/pages/parthner.html" class="footer__nav-list-link">
+						<a href="/src/pages/parthner.php" class="footer__nav-list-link">
 							<li class="footer__nav-list-item">Сотрудничество</li>
 						</a>
-						<a href="/src/pages/about-us.html" class="footer__nav-list-link">
+						<a href="/src/pages/about-us.php" class="footer__nav-list-link">
 							<li class="footer__nav-list-item">О нас</li>
 						</a>
 					</ul>

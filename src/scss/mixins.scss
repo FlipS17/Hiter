@@ -1,6 +1,7 @@
 @mixin buy-button {
 	@include button-text;
 	color: white;
+	cursor: pointer;
 	background: $main-color;
 	border: 1px solid transparent;
 	border-radius: 20px;

@@ -60,7 +60,7 @@ if ($password == $passconfirm && strlen ($password) > 6 ){
 
     $result = mysqli_query($db, $sqlInsert);
     
-    header ('Location:http://localhost/hiter-localhost/src/pages/account.html ');
+    header ('Location:http://localhost/hiter-localhost/src/pages/accout.php ');
    
     
 }

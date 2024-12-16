@@ -10,7 +10,7 @@
 	<body>
 		<header class="header">
 			<div class="header__container container">
-				<a href="/index.php" class="header__logo">
+				<a href="../../index.php" class="header__logo">
 					<img src="/src/img/mainpage/logo.svg" />
 				</a>
 				<ul class="header__nav-list">

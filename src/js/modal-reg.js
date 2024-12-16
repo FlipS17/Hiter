@@ -1,9 +1,9 @@
 // Получаем кнопку, которая открывает модальное окно
-const buttonReg = document.querySelector('.button-reg');
+const buttonReg = document.querySelector('.button-reg')
 
 // Создаем модальное окно
-const modalReg = document.createElement('div');
-modalReg.className = 'modal-reg';
+const modalReg = document.createElement('div')
+modalReg.className = 'modal-reg'
 modalReg.innerHTML = `
   <div class="modal-header">
   <img src='/src/img/mainpage/logo.svg'>
@@ -28,33 +28,33 @@ modalReg.innerHTML = `
 			<button type="submit" name="reg-sumbit" class='reg-submit-button button'> Зарегистрироваться</button>
   </form>
     </form>
-`;
+`
 
 // Создаем задний фон модального окна
-const modalOverlayReg = document.createElement('div');
-modalOverlayReg.className = 'modal-overlay-reg';
+const modalOverlayReg = document.createElement('div')
+modalOverlayReg.className = 'modal-overlay-reg'
 
 // Добавляем модальное окно и задний фон на страницу
-document.body.appendChild(modalReg);
-document.body.appendChild(modalOverlayReg);
+document.body.appendChild(modalReg)
+document.body.appendChild(modalOverlayReg)
 
 // Функция, которая открывает модальное окно
 function openModalReg() {
-	modalReg.style.display = 'block';
-	modalOverlayReg.style.display = 'block';
+	modalReg.style.display = 'block'
+	modalOverlayReg.style.display = 'block'
 }
 
 // Функция, которая закрывает модальное окно
 function closeModalReg() {
-	modalReg.style.display = 'none';
-	modalOverlayReg.style.display = 'none';
+	modalReg.style.display = 'none'
+	modalOverlayReg.style.display = 'none'
 }
 
 // Добавляем обработчик события кнопке, которая открывает модальное окно
-buttonReg.addEventListener('click', openModalReg);
+buttonReg.addEventListener('click', openModalReg)
 
 // Добавляем обработчик события кнопке закрытия модального окна
-modalReg.querySelector('.modal-close').addEventListener('click', closeModalReg);
+modalReg.querySelector('.modal-close').addEventListener('click', closeModalReg)
 
 // Добавляем обработчик события клика на задний фон модального окна
-modalOverlayReg.addEventListener('click', closeModalReg);
+modalOverlayReg.addEventListener('click', closeModalReg)

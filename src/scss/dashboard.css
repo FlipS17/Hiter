@@ -1,0 +1,30 @@
+.dashboard__title {
+  margin-bottom: 30px;
+}
+.dashboard__container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+.dashboard__container-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+.dashboard__container-cards-info {
+  display: flex;
+  justify-content: space-between;
+  max-width: 250px;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #f85e00;
+  border-radius: 20px;
+  align-items: center;
+  text-align: center;
+}
+.dashboard__container-cards-info-img {
+  max-width: 30px;
+  max-height: 30px;
+  width: 100%;
+}/*# sourceMappingURL=dashboard.css.map */

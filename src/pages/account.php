@@ -246,7 +246,8 @@ $user_data = $is_authenticated ? $_SESSION['user'] : array();
 					<a href='/update_data.php' class='button admin-pannel-btn'>Изменить данные</a>
 					<a href='/delete_data.php' class='button admin-pannel-btn'>Удалить данные</a>
 					<a href='/alldb.php' class='button admin-pannel-btn'>Просмотреть все данные</a>
-					<a href='/views.php' class='button admin-pannel-btn'>Просмотреть все представления</a>
+					<a href='/views.php' class='button admin-pannel-btn'>Все представления</a>
+					<a href='./dashboard.php' class='button admin-pannel-btn'>График данных</a>
 		</div>
 
 

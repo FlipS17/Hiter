@@ -1,3 +1,5 @@
+@import 'mixins.scss';
+@import 'fonts.scss';
 .books {
 	&__container {
 		max-width: 1400px;
@@ -37,6 +39,12 @@
 			}
 			&-button {
 				@include buy-button;
+				&:disabled {
+					border: 1px solid $main-color;
+					background: transparent;
+					color: $main-color;
+					cursor: not-allowed;
+				}
 			}
 			&-about {
 				display: flex;
