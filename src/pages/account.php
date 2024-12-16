@@ -186,6 +186,9 @@ if ($is_authenticated) {
                 <form method="post" action="./account.php">
                     <button class="button exit" name="logout">Выйти</button>
                 </form>
+				<button onClick='adminAppear' class="admin-button button none<?php if ($user_data['role'] == 1) echo 
+					"<script> document.querySelector('.admin-button').remove('none');</script>";?>">Админ-панель</button>
+
             </div>
             <div class="account__start <?php if ($is_authenticated) echo "none"; ?>" >
                 <button class="button-enter button">Войти</button>
@@ -262,6 +265,16 @@ if ($is_authenticated) {
 				</div>
 			</div>
 		</footer>
+
+		<div class="admin-pannel none">
+					<a href='/add_data.php' class='button admin-pannel-btn'>Добавить данные</a>
+					<a href='/update_data.php' class='button admin-pannel-btn'>Изменить данные</a>
+					<a href='/delete_data.php' class='button admin-pannel-btn'>Удалить данные</a>
+					<a href='/alldb.php' class='button admin-pannel-btn'>Просмотреть все данные</a>
+					<a href='/views.php' class='button admin-pannel-btn'>Просмотреть все представления</a>
+					<a href='../pages/dashboard.php' class='button admin-pannel-btn'>Dashboard</a>
+		</div>
+
 
     <script type="module" src="../js/main.js"></script>
     <script src="../js/modal-enter.js"></script>
