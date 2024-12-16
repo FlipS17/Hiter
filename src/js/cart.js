@@ -46,13 +46,13 @@ function renderCart() {
                 <div>${item.name}</div>
                 <div>${item.author}</div>
                 <div>${item.cost} ₽</div>
-                <div>${item.quantity}</div>
+                <div>${item.amount}</div>
                 <button class="remove" data-id="${item.id}">Удалить</button>
             `
 			cartProductsContainer.appendChild(productElement)
 
-			totalAmount += item.quantity
-			totalCost += item.cost * item.quantity
+			totalAmount += item.amount
+			totalCost += item.cost * item.amount
 		})
 
 		totalAmountElement.innerText = totalAmount
@@ -126,7 +126,7 @@ function renderCart() {
                 <div class='cart__inner-product-move'>
                     <div class='cart__inner-product-move-count'>
                         <button class='cart__inner-product-move-count-more'>+</button>
-                        <p class='cart__inner-product-move-count-number'>${item.quantity}</p>
+                        <p class='cart__inner-product-move-count-number'>${item.amount}</p>
                         <button class='cart__inner-product-move-count-less'>-</button>
                     </div>
                     <div class='cart__inner-product-move-delete'>
@@ -141,7 +141,7 @@ function renderCart() {
 			productElement
 				.querySelector('.cart__inner-product-move-count-more')
 				.addEventListener('click', () => {
-					item.quantity++
+					item.amount++
 					saveCart()
 					renderCart()
 				})
@@ -149,8 +149,8 @@ function renderCart() {
 			productElement
 				.querySelector('.cart__inner-product-move-count-less')
 				.addEventListener('click', () => {
-					if (item.quantity > 1) {
-						item.quantity--
+					if (item.amount > 1) {
+						item.amount--
 					} else {
 						cart.splice(index, 1) // Удаляем товар, если количество 0
 					}
@@ -166,8 +166,8 @@ function renderCart() {
 					renderCart()
 				})
 
-			totalAmount += item.quantity
-			totalCost += item.cost * item.quantity
+			totalAmount += item.amount
+			totalCost += item.cost * item.amount
 		})
 	}
 
@@ -228,8 +228,8 @@ document.querySelector('#buy-btn').addEventListener('click', () => {
 	// Пример формирования данных для отправки
 	const orderData = cart.map(item => ({
 		id: item.id, // ID книги
-		amount: item.quantity, // Количество
-		total_price: item.cost * item.quantity, // Общая стоимость
+		amount: item.amount, // Количество
+		total_price: item.cost * item.amount, // Общая стоимость
 	}))
 
 	// Отправка данных на сервер

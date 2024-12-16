@@ -2,6 +2,12 @@
 session_start();
 $db = mysqli_connect('localhost', 'root', '', 'Hiter');
 
+// Проверяем наличие параметра id в URL
+if (!isset($_GET['id']) || empty($_GET['id'])) {
+    echo "<script>alert('Ошибка: параметр ID не передан');</script>";
+    exit(); // Прекращаем выполнение скрипта, если параметр не передан
+}
+
 $id_book = $_GET['id'];
 
 // Проверка на ошибки подключения к базе данных
@@ -94,7 +100,8 @@ $db->close();
                     <a href="/src/pages/sales.php" class="header__nav-mobile-menu-link">Акции</a>
                 </li>
                 <li class="header__nav-mobile-menu-item">
-                    <a href="/src/pages/parthner.php" class="header__nav-mobile-menu-link">Сотрудничество</a>
+
+				<a href="/src/pages/parthner.php" class="header__nav-mobile-menu-link">Сотрудничество</a>
                 </li>
                 <li class="header__nav-mobile-menu-item">
                     <a href="/src/pages/about-us.php" class="header__nav-mobile-menu-link">О нас</a>
@@ -170,56 +177,55 @@ $db->close();
 </footer>
 
 <script>
- // Получаем элемент кнопки "В корзину"
-    const addToCartButton = document.getElementById('add-to-cart');
+// Получаем элемент кнопки "В корзину"
+const addToCartButton = document.getElementById('add-to-cart');
 
-    // Проверяем наличие книги в корзине при загрузке страницы
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const bookId = <?= $id_book ?>;
+// Проверяем наличие книги в корзине при загрузке страницы
+const cart = JSON.parse(localStorage.getItem('cart')) || [];
+const bookId = <?= $id_book ?>;
+
+// Проверяем, есть ли книга в корзине
+const bookInCart = cart.find(item => item.id === bookId);
+if (bookInCart) {
+    addToCartButton.textContent = 'В корзине'; // Изменяем текст кнопки, если книга в корзине
+    addToCartButton.disabled = true; // Отключаем кнопку, если книга уже в корзине
+}
+
+
+// Обработчик события для добавления книги в корзину
+addToCartButton.addEventListener('click', function() {
+    const book = {
+        id: bookId,
+        name: '<?= $name ?>',
+        cost: <?= $cost ?>,
+        photo: '<?= $photo ?>',
+        author: '<?= $author_name ?>',
+        amount: 1
+    };
 
     // Проверяем, есть ли книга в корзине
     const bookInCart = cart.find(item => item.id === bookId);
+
     if (bookInCart) {
-        addToCartButton.textContent = 'В корзине'; // Изменяем текст кнопки, если книга в корзине
-        addToCartButton.disabled = true; // Отключаем кнопку, если книга уже в корзине
+        // Если книга уже в корзине, увеличиваем количество
+        bookInCart.amount++;
+    } else {
+        // Если книги нет в корзине, добавляем ее
+        cart.push(book);
     }
 
-    // Обработчик события для добавления книги в корзину
-    addToCartButton.addEventListener('click', function() {
-        const book = {
-            id: bookId,
-            name: '<?= $name ?>',
-            cost: <?= $cost ?>,
-            photo: '<?= $photo ?>',
-            author: '<?= $author_name ?>',
-            quantity: 1
-        };
+    // Сохраняем обновленную корзину в localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
 
-        // Проверяем, есть ли книга в корзине
-        const bookInCart = cart.find(item => item.id === bookId);
+    // Уведомляем пользователя
+    alert('Книга добавлена в корзину!');
 
-        if (bookInCart) {
-            // Если книга уже в корзине, увеличиваем количество
-            bookInCart.quantity++;
-        } else {
-            // Если книги нет в корзине, добавляем ее
-            cart.push(book);
-        }
-
-        // Сохраняем обновленную корзину в localStorage
-        localStorage.setItem('cart', JSON.stringify(cart));
-
-        // Уведомляем пользователя
-        alert('Книга добавлена в корзину!');
-
-        // Изменяем текст кнопки и отключаем ее
-        addToCartButton.textContent = 'В корзине';
-        addToCartButton.disabled = true;
-
-        // Перенаправляем пользователя на страницу корзины
-        // window.location.href = "/src/pages/cart.php";
-    });
+    // Изменяем текст кнопки и отключаем ее
+    addToCartButton.textContent = 'В корзине';
+    addToCartButton.disabled = true;
+});
 </script>
+
 <script type='module' src="/src/js/main.js"></script>
 <script src="/src/js/burger.js"></script>
 
